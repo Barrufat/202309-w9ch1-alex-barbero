@@ -1,12 +1,25 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { Film } from "./types";
+import { FilmStructure } from "./types";
+
+interface FilmsStateStructure {
+  films: FilmStructure[];
+}
+
+const initialMovies: FilmsStateStructure = { films: [] };
 
 export const filmsSlice = createSlice({
   name: "films",
-  initialState: [] as Film[],
+  initialState: initialMovies,
   reducers: {
-    loadFilms: (currentState, action: PayloadAction<Film>) => {
-      return [...currentState, action.payload];
+    loadFilms: (
+      currentState: FilmsStateStructure,
+      action: PayloadAction<FilmStructure[]>,
+    ) => {
+      return { films: [...currentState.films, ...action.payload] };
     },
   },
 });
+
+export const { loadFilms } = filmsSlice.actions;
+
+export default filmsSlice.reducer;
