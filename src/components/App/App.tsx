@@ -9,21 +9,30 @@ import { loadFilms } from "../../store/feature/films/filmsSlice";
 const App = () => {
   const { getFilms } = useFilmsApi();
   const films = useAppSelector((state: RootState) => {
-    return state.films;
+    return state.films.films;
   });
 
+  console.log(films);
   const dispatch = useDispatch();
 
   useEffect(() => {
     (async () => {
-      dispatch(loadFilms(await getFilms()));
+      const currentFilms = await getFilms();
+      dispatch(loadFilms(currentFilms));
     })();
-  }, [dispatch, getFilms, films]);
+  }, [dispatch, getFilms]);
 
   return (
     <div className="main-container">
       <h1>Movies list</h1>
-      <ul></ul>
+      <ul>
+        {films.map((film) => (
+          <li className="film">
+            <h2>{film.Title}</h2>
+            <span>{film.Year}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

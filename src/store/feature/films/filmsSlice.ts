@@ -12,10 +12,10 @@ export const filmsSlice = createSlice({
   initialState: initialMovies,
   reducers: {
     loadFilms: (
-      currentState: FilmsStateStructure,
+      _currentState: FilmsStateStructure,
       action: PayloadAction<FilmStructure[]>,
     ) => {
-      return { films: [...currentState.films, ...action.payload] };
+      return { films: [...action.payload] };
     },
   },
 });
