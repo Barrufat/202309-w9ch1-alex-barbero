@@ -1,19 +1,19 @@
 import { useCallback } from "react";
 
-import { Film } from "../store/featrue/films/types";
+import { FilmStructure } from "../store/feature/films/types";
 
 const useFilmsApi = () => {
   const apiUrl = "https://movies-ebpz.onrender.com/films";
 
-  const getUnicorns = useCallback(async () => {
+  const getFilms = useCallback(async () => {
     const response = await fetch(apiUrl);
-    const unicorns = (await response.json()) as Film[];
+    const films = (await response.json()) as FilmStructure[];
 
-    return unicorns;
+    return films;
   }, [apiUrl]);
 
   return {
-    getUnicorns,
+    getFilms,
   };
 };
 
