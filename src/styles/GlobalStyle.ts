@@ -1,3 +1,6 @@
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
 *,
 ::before,
 ::after {
@@ -47,3 +50,6 @@ button {
   flex-direction: column;
   align-items: center;
 }
+`;
+
+export default GlobalStyle;
