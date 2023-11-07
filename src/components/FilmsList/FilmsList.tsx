@@ -1,30 +1,14 @@
-import { useDispatch } from "react-redux";
-import useFilmsApi from "../../hooks/useFilmsApi";
-import { useAppSelector } from "../../store/hooks";
-import { useEffect } from "react";
-import { RootState } from "../../store";
+import { FilmStructure } from "../../store/feature/films/types";
 
-import { loadFilms } from "../../store/feature/films/filmsSlice";
+interface filmsProps {
+  films: FilmStructure[];
+}
 
-const FilmsList = () => {
-  const { getFilms } = useFilmsApi();
-  const films = useAppSelector((state: RootState) => {
-    return state.films.films;
-  });
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    (async () => {
-      const currentFilms = await getFilms();
-      dispatch(loadFilms(currentFilms));
-    })();
-  }, [dispatch, getFilms]);
-
+const FilmsList = ({ films }: filmsProps) => {
   return (
     <ul className="films">
       {films.map((film) => (
-        <li className="film">
+        <li className="film" key={film.id}>
           <h3>{film.Title}</h3>
           <span>{film.Year}</span>
           <img
