@@ -10,8 +10,6 @@ const FilmsListStyled = styled.article`
 
   .film {
     &__image {
-      width: 300px;
-      height: 200px;
       border-radius: 10px 50px 10px 50px;
     }
 

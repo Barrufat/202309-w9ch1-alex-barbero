@@ -13,7 +13,7 @@ const FilmCard = ({ film }: FilmCardProps) => {
         src={film.Images[0]}
         alt={film.Title}
         width="300"
-        height="168.54"
+        height="199.175"
       />
       <div className="film__info">
         <h3 className="film__title">{film.Title}</h3>
