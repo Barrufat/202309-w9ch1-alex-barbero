@@ -10,14 +10,17 @@ const FilmsList = ({ films }: filmsProps) => {
     <FilmsListStyled>
       {films.map((film) => (
         <li className="film" key={film.id}>
-          <h3>{film.Title}</h3>
-          <span>{film.Year}</span>
           <img
+            className="film__image"
             src={film.Images[0]}
             alt={film.Title}
             width="300"
             height="168.54"
           />
+          <div className="film__info">
+            <h3 className="film__title">{film.Title}</h3>
+            <span className="film__year">{film.Year}</span>
+          </div>
         </li>
       ))}
     </FilmsListStyled>

@@ -11,6 +11,7 @@ html {
 
 body {
   margin: 0;
+  background-color: #4c4441;
 }
 
 ul,
@@ -33,6 +34,7 @@ input {
 h1,
 h2 {
   margin: 0;
+  color: #ffffff;
 }
 
 button {
