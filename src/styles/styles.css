@@ -39,32 +39,9 @@ button {
   cursor: pointer;
 }
 
-.main-container {
-  padding: 30px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .films-box {
   display: flex;
   margin: 20px 0;
-  flex-direction: column;
-  align-items: center;
-}
-
-.films {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.film {
-  margin: 20px;
-  width: 100%;
-  display: flex;
   flex-direction: column;
   align-items: center;
 }
