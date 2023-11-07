@@ -6,9 +6,7 @@ import { loadMoviesActionCreator } from "../../store/feature/films/filmsSlice";
 import { useAppSelector } from "../../store/hooks";
 
 const FilmsPage = (): React.ReactElement => {
-  const films = useAppSelector((state) => {
-    return state.filmsState.films;
-  });
+  const films = useAppSelector((state) => state.filmsState.films);
   const { getFilms } = useFilmsApi();
   const dispatch = useDispatch();
 

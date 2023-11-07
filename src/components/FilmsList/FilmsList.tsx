@@ -1,4 +1,5 @@
 import { FilmStructure } from "../../store/feature/films/types";
+import FilmsListStyled from "./FilmsListStyled";
 
 interface filmsProps {
   films: FilmStructure[];
@@ -6,7 +7,7 @@ interface filmsProps {
 
 const FilmsList = ({ films }: filmsProps) => {
   return (
-    <ul className="films">
+    <FilmsListStyled>
       {films.map((film) => (
         <li className="film" key={film.id}>
           <h3>{film.Title}</h3>
@@ -19,7 +20,7 @@ const FilmsList = ({ films }: filmsProps) => {
           />
         </li>
       ))}
-    </ul>
+    </FilmsListStyled>
   );
 };
 
