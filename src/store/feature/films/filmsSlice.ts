@@ -7,19 +7,17 @@ interface FilmsStateStructure {
 
 const initialMovies: FilmsStateStructure = { films: [] };
 
-export const filmsSlice = createSlice({
+const filmsSlice = createSlice({
   name: "films",
   initialState: initialMovies,
   reducers: {
     loadFilms: (
-      _currentState: FilmsStateStructure,
+      currentState: FilmsStateStructure,
       action: PayloadAction<FilmStructure[]>,
-    ) => {
-      return { films: [...action.payload] };
-    },
+    ): FilmsStateStructure => ({ ...currentState, films: action.payload }),
   },
 });
 
-export const { loadFilms } = filmsSlice.actions;
+export const { loadFilms: loadMoviesActionCreator } = filmsSlice.actions;
 
-export default filmsSlice.reducer;
+export const filmsReducer = filmsSlice.reducer;
