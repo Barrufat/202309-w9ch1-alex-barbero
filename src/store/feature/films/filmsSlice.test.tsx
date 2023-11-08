@@ -2,8 +2,8 @@ import { filmsReducer, loadMoviesActionCreator } from "./filmsSlice";
 import { FilmStructure } from "./types";
 
 describe("Given a loadMovies reducer", () => {
-  describe("When it receives an empty action", () => {
-    test("should return the initial state", () => {
+  describe("When it doesn't receive any film", () => {
+    test("should show nothing", () => {
       expect(filmsReducer(undefined, { type: undefined })).toEqual({
         films: [],
       });

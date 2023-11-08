@@ -5,7 +5,7 @@ import FilmsListStyled from "./FilmsListStyled";
 const FilmsList = () => {
   const films = useAppSelector((state) => state.filmsState.films);
   return (
-    <FilmsListStyled>
+    <FilmsListStyled title="films-list">
       {films.map((film) => (
         <li className="film" key={film.id}>
           <FilmCard film={film} />
