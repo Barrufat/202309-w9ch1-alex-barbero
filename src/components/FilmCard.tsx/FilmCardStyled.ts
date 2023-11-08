@@ -11,13 +11,15 @@ const FilmsListStyled = styled.article`
   .film {
     &__image {
       border-radius: 10px 50px 10px 50px;
+
+      &-watched {
+        border: solid 3px white;
+      }
     }
 
     &__info {
       width: 100%;
       display: flex;
-      flex-direction: column;
-      align-items: flex-end;
       justify-content: center;
       height: 40%;
       background-color: #ffdace8e;
@@ -27,8 +29,17 @@ const FilmsListStyled = styled.article`
       bottom: 0;
     }
 
+    &__data-box {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
     &__title {
       margin: 0;
+      text-align: end;
     }
   }
 `;
