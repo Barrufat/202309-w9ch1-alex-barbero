@@ -1,12 +1,9 @@
-import { FilmStructure } from "../../store/feature/films/types";
+import { useAppSelector } from "../../store/hooks";
 import FilmCard from "../FilmCard.tsx/FilmCard";
 import FilmsListStyled from "./FilmsListStyled";
 
-interface filmsProps {
-  films: FilmStructure[];
-}
-
-const FilmsList = ({ films }: filmsProps) => {
+const FilmsList = () => {
+  const films = useAppSelector((state) => state.filmsState.films);
   return (
     <FilmsListStyled>
       {films.map((film) => (
