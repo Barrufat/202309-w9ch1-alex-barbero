@@ -12,7 +12,7 @@ describe("Given a Button component", () => {
 
   describe("When it receives a text 'Test'", () => {
     test("Then it should show a button with 'Test' inside", async () => {
-      render(<Button type="button" title="test" />);
+      render(<Button type="button" title="test" text={"test"} />);
 
       const button = screen.getByTitle(text);
 
@@ -23,7 +23,12 @@ describe("Given a Button component", () => {
   describe("When it receives an action and the user clicks the button", () => {
     test("Then it should call the received action", async () => {
       render(
-        <Button type="button" title="test" actionOnClick={actionOnClick} />,
+        <Button
+          type="button"
+          title="test"
+          actionOnClick={actionOnClick}
+          text="test"
+        />,
       );
 
       const button = screen.getByTitle("test");
