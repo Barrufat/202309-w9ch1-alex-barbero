@@ -3,6 +3,7 @@ import { FilmStructure } from "../store/feature/films/types";
 const filmsMock: FilmStructure[] = [
   {
     id: 1,
+    isWatched: true,
     Title: "Avatar",
     Year: "2009",
     Images: [
@@ -11,6 +12,7 @@ const filmsMock: FilmStructure[] = [
   },
   {
     id: 2,
+    isWatched: true,
     Title: "I Am Legend",
     Year: "2007",
 
