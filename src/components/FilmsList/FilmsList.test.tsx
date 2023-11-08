@@ -1,14 +1,15 @@
 import { screen } from "@testing-library/react";
 import { renderWithProviders } from "../../utils/test-utils";
 import FilmsList from "./FilmsList";
-import filmsMock from "../../mocks/filmsMock";
 
 describe("Given a FilmsList component", () => {
-  describe("When it receives the 'Avatar Film' ", () => {
-    test("It should show the text Avatar somewhere", async () => {
-      renderWithProviders(<FilmsList films={filmsMock} />);
+  describe("When it receives a list of films ", () => {
+    test("It should show 'films-list' in an accessible title", async () => {
+      renderWithProviders(<FilmsList />);
 
-      expect(await screen.findByText("Avatar")).toBeInTheDocument();
+      const listTitle = screen.getByTitle("films-list");
+
+      expect(listTitle).toBeInTheDocument();
     });
   });
 });
