@@ -3,16 +3,19 @@ import { FilmStructure } from "../../store/feature/films/types";
 import Button from "../Button/Button";
 import FilmCardStyled from "./FilmCardStyled";
 import { toggleWatchedFilmsActionCreator } from "../../store/feature/films/filmsSlice";
+import useFilmsApi from "../../hooks/useFilmsApi";
 
 interface FilmCardProps {
   film: FilmStructure;
 }
 
 const FilmCard = ({ film }: FilmCardProps) => {
+  const { setWatchedFilms } = useFilmsApi();
   const dispatch = useDispatch();
 
-  const toggleCardIsWatched = (id: number): void => {
+  const toggleCardIsWatched = async (id: number): Promise<void> => {
     dispatch(toggleWatchedFilmsActionCreator(id));
+    await setWatchedFilms(id, film.isWatched);
   };
 
   return (
