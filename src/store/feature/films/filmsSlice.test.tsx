@@ -17,12 +17,24 @@ describe("Given a loadMovies reducer", () => {
           filmsReducer(
             previousState,
             loadMoviesActionCreator([
-              { id: 1, Title: "Star Wars", Year: "2003", Images: ["atsseta"] },
+              {
+                id: 1,
+                Title: "Star Wars",
+                Year: "2003",
+                Images: ["atsseta"],
+                isWatched: true,
+              },
             ]),
           ),
         ).toEqual({
           films: [
-            { id: 1, Title: "Star Wars", Year: "2003", Images: ["atsseta"] },
+            {
+              id: 1,
+              Title: "Star Wars",
+              Year: "2003",
+              Images: ["atsseta"],
+              isWatched: true,
+            },
           ],
         });
       });
@@ -32,7 +44,13 @@ describe("Given a loadMovies reducer", () => {
       test("it should update films with just with the Star Wars film", () => {
         const previousState: { films: FilmStructure[] } = {
           films: [
-            { id: 1, Title: "Star Wars", Year: "2005", Images: ["Img1"] },
+            {
+              id: 1,
+              Title: "Star Wars",
+              Year: "2005",
+              Images: ["Img1"],
+              isWatched: true,
+            },
           ],
         };
 
@@ -45,11 +63,20 @@ describe("Given a loadMovies reducer", () => {
                 Title: "Superman",
                 Year: "2003",
                 Images: ["Img2"],
+                isWatched: true,
               },
             ]),
           ),
         ).toEqual({
-          films: [{ id: 2, Title: "Superman", Year: "2003", Images: ["Img2"] }],
+          films: [
+            {
+              id: 2,
+              Title: "Superman",
+              Year: "2003",
+              Images: ["Img2"],
+              isWatched: true,
+            },
+          ],
         });
       });
     });
