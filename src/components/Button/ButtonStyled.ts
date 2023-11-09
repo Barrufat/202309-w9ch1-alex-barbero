@@ -11,6 +11,10 @@ const ButtonStyled = styled.button`
   color: #fff;
   font-weight: 700;
   font-size: 19px;
+
+  .new-film {
+    background-color: #4c4441;
+  }
 `;
 
 export default ButtonStyled;
