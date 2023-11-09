@@ -26,7 +26,13 @@ const filmsSlice = createSlice({
           film.id === action.payload ? !film.isWatched : film.isWatched,
       })),
     }),
-
+    addNewFilm: (
+      currentState: FilmsStateStructure,
+      action: PayloadAction<FilmStructure>,
+    ): FilmsStateStructure => ({
+      ...currentState,
+      films: [...currentState.films, action.payload],
+    }),
     deleteFilm: (currentState, action) => ({
       ...currentState,
       films: currentState.films.filter((film) => film.id !== action.payload),
@@ -37,6 +43,7 @@ const filmsSlice = createSlice({
 export const {
   loadFilms: loadMoviesActionCreator,
   toggleWatchedFilm: toggleWatchedFilmActionCreator,
+  addNewFilm: addNewFilmActionCreator,
 } = filmsSlice.actions;
 
 export const filmsReducer = filmsSlice.reducer;
