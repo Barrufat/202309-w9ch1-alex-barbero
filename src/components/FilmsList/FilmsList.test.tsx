@@ -1,15 +1,17 @@
 import { screen } from "@testing-library/react";
-import { renderWithProviders } from "../../utils/test-utils";
+import customRender from "../../test-utils/customRender";
 import FilmsList from "./FilmsList";
 
 describe("Given a FilmsList component", () => {
   describe("When it receives a list of films ", () => {
-    test("It should show 'films-list' in an accessible title", async () => {
-      renderWithProviders(<FilmsList />);
+    test("It should show 'Avatar' in an accessible title", async () => {
+      const expectedFilmTitle = "Avatar";
 
-      const listTitle = screen.getByTitle("films-list");
+      customRender(<FilmsList />);
 
-      expect(listTitle).toBeInTheDocument();
+      const filmTitleElement = screen.getByText(expectedFilmTitle);
+
+      expect(filmTitleElement).toBeInTheDocument();
     });
   });
 });
