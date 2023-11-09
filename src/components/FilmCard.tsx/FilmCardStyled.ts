@@ -20,7 +20,7 @@ const FilmsListStyled = styled.article`
     &__info {
       width: 100%;
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
       height: 40%;
       background-color: #ffdace8e;
       border-radius: 0 0 10px 50px;
