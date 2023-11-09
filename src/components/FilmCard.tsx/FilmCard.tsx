@@ -30,7 +30,6 @@ const FilmCard = ({ film }: FilmCardProps) => {
       <div className="film__info">
         <Button
           type={"button"}
-          title="isWatched-button"
           actionOnClick={() => {
             toggleCardIsWatched(film.id);
           }}
