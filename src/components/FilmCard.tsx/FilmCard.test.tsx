@@ -3,15 +3,23 @@ import "@testing-library/jest-dom";
 import FilmCard from "./FilmCard";
 import filmsMock from "../../mocks/filmsMock";
 import { Provider } from "react-redux";
-import { store } from "../../store";
+import { configureStore } from "@reduxjs/toolkit";
+import { filmsReducer } from "../../store/feature/films/filmsSlice";
 
 describe("Given a FilmCard component", () => {
+  const mockStore = configureStore({
+    reducer: {
+      filmsState: filmsReducer,
+    },
+    preloadedState: { filmsState: { films: filmsMock } },
+  });
+
   describe("When it recieves the Avatar film", () => {
     test("It should show 'Avatar' in a heading", () => {
       const expectedFilmTitle = "Avatar";
 
       render(
-        <Provider store={store}>
+        <Provider store={mockStore}>
           <FilmCard film={filmsMock[0]} />
         </Provider>,
       );
@@ -29,7 +37,7 @@ describe("Given a FilmCard component", () => {
       const expectedButtonText = "watched";
 
       render(
-        <Provider store={store}>
+        <Provider store={mockStore}>
           <FilmCard film={filmsMock[0]} />
         </Provider>,
       );
@@ -45,7 +53,7 @@ describe("Given a FilmCard component", () => {
       const expectedButtonText = "unwatched";
 
       render(
-        <Provider store={store}>
+        <Provider store={mockStore}>
           <FilmCard film={filmsMock[1]} />
         </Provider>,
       );
