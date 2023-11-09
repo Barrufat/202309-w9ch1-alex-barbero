@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { FilmStructure } from "../../store/feature/films/types";
 import Button from "../Button/Button";
 import FilmCardStyled from "./FilmCardStyled";
-import { toggleWatchedFilmsActionCreator } from "../../store/feature/films/filmsSlice";
+import { toggleWatchedFilmActionCreator } from "../../store/feature/films/filmsSlice";
 import useFilmsApi from "../../hooks/useFilmsApi";
 
 interface FilmCardProps {
@@ -14,7 +14,7 @@ const FilmCard = ({ film }: FilmCardProps) => {
   const dispatch = useDispatch();
 
   const toggleCardIsWatched = async (id: number): Promise<void> => {
-    dispatch(toggleWatchedFilmsActionCreator(id));
+    dispatch(toggleWatchedFilmActionCreator(id));
     await setWatchedFilms(id, film.isWatched);
   };
 
@@ -30,7 +30,6 @@ const FilmCard = ({ film }: FilmCardProps) => {
       <div className="film__info">
         <Button
           type={"button"}
-          title="isWatched-button"
           actionOnClick={() => {
             toggleCardIsWatched(film.id);
           }}
