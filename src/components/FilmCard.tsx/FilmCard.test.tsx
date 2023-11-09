@@ -23,4 +23,36 @@ describe("Given a FilmCard component", () => {
       expect(filmTitle).toBeInTheDocument();
     });
   });
+
+  describe("When it recieves the Avatar film", () => {
+    test("It should show 'watched' inside a button", () => {
+      const expectedButtonText = "watched";
+
+      render(
+        <Provider store={store}>
+          <FilmCard film={filmsMock[0]} />
+        </Provider>,
+      );
+
+      const filmButton = screen.getByText(expectedButtonText);
+
+      expect(filmButton).toBeInTheDocument();
+    });
+  });
+
+  describe("When it recieves the I Am Legend film", () => {
+    test("It should show 'unwatched' inside a button", () => {
+      const expectedButtonText = "unwatched";
+
+      render(
+        <Provider store={store}>
+          <FilmCard film={filmsMock[1]} />
+        </Provider>,
+      );
+
+      const filmButton = screen.getByText(expectedButtonText);
+
+      expect(filmButton).toBeInTheDocument();
+    });
+  });
 });
