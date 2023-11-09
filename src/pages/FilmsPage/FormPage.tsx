@@ -22,7 +22,7 @@ const FilmsPage = (): React.ReactElement => {
     <section className="films-box">
       <h2>Add a new Film</h2>
       <FilmForm submitAction={addCurrentFilm} />
-      <Link className="link" to="/add">
+      <Link className="link" to="/films">
         Go to Films
       </Link>
     </section>

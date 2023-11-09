@@ -14,7 +14,7 @@ html {
 
 body {
   margin: 0;
-  background-color: #4c4441;
+  background-color: #24201f;
 }
 
 ul,
