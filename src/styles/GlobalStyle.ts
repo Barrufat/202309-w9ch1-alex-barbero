@@ -50,6 +50,20 @@ button {
   flex-direction: column;
   align-items: center;
 }
+
+.link{
+  margin-top:20px;
+  border: none;
+  border-radius: 15px;
+  flex-shrink: 0;
+  background-color: #fff;
+  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.1));
+  padding: 10px;
+  cursor: pointer;
+  color: #4c4441;
+  font-weight: 700;
+  font-size: 19px;
+}
 `;
 
 export default GlobalStyle;

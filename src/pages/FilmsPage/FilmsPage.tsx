@@ -20,7 +20,9 @@ const FilmsPage = (): React.ReactElement => {
   return (
     <section className="films-box">
       <h2>Movies List</h2>
-      <Link to="/add">Create new Film</Link>
+      <Link className="link" to="/add">
+        Create new Film
+      </Link>
       <FilmsList />
     </section>
   );
