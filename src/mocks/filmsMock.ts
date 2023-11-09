@@ -12,10 +12,9 @@ const filmsMock: FilmStructure[] = [
   },
   {
     id: 2,
-    isWatched: true,
+    isWatched: false,
     Title: "I Am Legend",
     Year: "2007",
-
     Images: [
       "https://images-na.ssl-images-amazon.com/images/M/MV5BMTI0NTI4NjE3NV5BMl5BanBnXkFtZTYwMDA0Nzc4._V1_.jpg",
     ],
