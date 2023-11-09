@@ -24,9 +24,9 @@ describe("Given a filmsReducer", () => {
           loadMoviesActionCreator([
             {
               id: 1,
-              Title: "Star Wars",
-              Year: "2003",
-              Images: ["atsseta"],
+              title: "Star Wars",
+              year: "2003",
+              image: "atsseta",
               isWatched: true,
             },
           ]),
@@ -35,9 +35,9 @@ describe("Given a filmsReducer", () => {
         films: [
           {
             id: 1,
-            Title: "Star Wars",
-            Year: "2003",
-            Images: ["atsseta"],
+            title: "Star Wars",
+            year: "2003",
+            image: "atsseta",
             isWatched: true,
           },
         ],
@@ -51,9 +51,9 @@ describe("Given a filmsReducer", () => {
         films: [
           {
             id: 1,
-            Title: "Star Wars",
-            Year: "2005",
-            Images: ["Img1"],
+            title: "Star Wars",
+            year: "2005",
+            image: "Img1",
             isWatched: true,
           },
         ],
@@ -65,9 +65,9 @@ describe("Given a filmsReducer", () => {
           loadMoviesActionCreator([
             {
               id: 2,
-              Title: "Superman",
-              Year: "2003",
-              Images: ["Img2"],
+              title: "Superman",
+              year: "2003",
+              image: "Img2",
               isWatched: true,
             },
           ]),
@@ -76,9 +76,9 @@ describe("Given a filmsReducer", () => {
         films: [
           {
             id: 2,
-            Title: "Superman",
-            Year: "2003",
-            Images: ["Img2"],
+            title: "Superman",
+            year: "2003",
+            image: "Img2",
             isWatched: true,
           },
         ],
@@ -92,9 +92,9 @@ describe("Given a filmsReducer", () => {
         films: [
           {
             id: 1,
-            Title: "Star Wars",
-            Year: "2005",
-            Images: ["Img1"],
+            title: "Star Wars",
+            year: "2005",
+            image: "Img1",
             isWatched: true,
           },
         ],
@@ -103,9 +103,9 @@ describe("Given a filmsReducer", () => {
         films: [
           {
             id: 1,
-            Title: "Star Wars",
-            Year: "2005",
-            Images: ["Img1"],
+            title: "Star Wars",
+            year: "2005",
+            image: "Img1",
             isWatched: false,
           },
         ],

@@ -1,7 +1,7 @@
 export interface FilmStructure {
   id: number;
   isWatched: boolean;
-  Title: string;
-  Year: string;
-  Images: string[];
+  title: string;
+  year: string;
+  image: string;
 }

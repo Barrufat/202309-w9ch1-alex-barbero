@@ -22,8 +22,8 @@ const FilmCard = ({ film }: FilmCardProps) => {
     <FilmCardStyled>
       <img
         className={`film__image ${film.isWatched ? "film__image-watched" : ""}`}
-        src={film.Images[0]}
-        alt={film.Title}
+        src={film.image}
+        alt={film.title}
         width="300"
         height="199.175"
       />
@@ -36,8 +36,8 @@ const FilmCard = ({ film }: FilmCardProps) => {
           text={`${film.isWatched ? "watched" : "unwatched"}`}
         />
         <div className="film__data-box">
-          <h3 className="film__title">{film.Title}</h3>
-          <span className="film__year">{film.Year}</span>
+          <h3 className="film__title">{film.title}</h3>
+          <span className="film__year">{film.year}</span>
         </div>
       </div>
     </FilmCardStyled>
