@@ -1,8 +1,13 @@
 import { useState } from "react";
 import FilmFormStyled from "./FilmFormStyled";
 import { FilmStructure } from "../../store/feature/films/types";
+import Button from "../Button/Button";
 
-const FilmForm = () => {
+interface FilmFormProps {
+  submitAction: (newFilm: FilmStructure) => void;
+}
+
+const FilmForm = ({ submitAction }: FilmFormProps) => {
   const initialFilm: FilmStructure = {
     id: 0,
     isWatched: false,
@@ -18,14 +23,12 @@ const FilmForm = () => {
       ...currentNewFilm,
       [event.target.id]: event.target.value,
     }));
-
-    console.log(newFilm);
   };
 
   const onFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    console.log("Formulario enviado!");
+    submitAction(newFilm);
   };
 
   return (
@@ -46,11 +49,12 @@ const FilmForm = () => {
       />
       <label htmlFor="image">Image url: </label>
       <input
-        type="text"
+        type="url"
         id="image"
         value={newFilm.image}
         onChange={updateNewFilm}
       />
+      <Button type={"submit"} text={"Create new Film"} />
     </FilmFormStyled>
   );
 };

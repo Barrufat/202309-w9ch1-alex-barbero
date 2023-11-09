@@ -33,9 +33,31 @@ const useFilmsApi = () => {
     [apiUrl],
   );
 
+  const addNewFilm = useCallback(
+    async (newFilm: FilmStructure): Promise<void> => {
+      try {
+        const response = await fetch(`${apiUrl}/films`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newFilm),
+        });
+
+        if (!response.ok) {
+          throw new Error();
+        }
+      } catch {
+        throw new Error();
+      }
+    },
+    [apiUrl],
+  );
+
   return {
     getFilms,
     setWatchedFilms,
+    addNewFilm,
   };
 };
 

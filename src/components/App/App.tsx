@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import FilmsPage from "../../pages/FilmsPage/FilmsPage";
 import AppStyled from "./AppStyled";
-import FilmForm from "../FilmForm/FilmForm";
+import FormPage from "../../pages/FilmsPage/FormPage";
 
 const App = () => {
   return (
@@ -10,7 +10,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Navigate to="/films" />} />
         <Route path="/films" element={<FilmsPage />} />
-        <Route path="/form" element={<FilmForm />} />
+        <Route path="/add" element={<FormPage />} />
       </Routes>
     </AppStyled>
   );

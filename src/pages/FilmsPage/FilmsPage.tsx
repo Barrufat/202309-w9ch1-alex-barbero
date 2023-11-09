@@ -3,6 +3,7 @@ import FilmsList from "../../components/FilmsList/FilmsList";
 import useFilmsApi from "../../hooks/useFilmsApi";
 import { useDispatch } from "react-redux";
 import { loadMoviesActionCreator } from "../../store/feature/films/filmsSlice";
+import { Link } from "react-router-dom";
 
 const FilmsPage = (): React.ReactElement => {
   const { getFilms } = useFilmsApi();
@@ -19,6 +20,7 @@ const FilmsPage = (): React.ReactElement => {
   return (
     <section className="films-box">
       <h2>Movies List</h2>
+      <Link to="/add">Create new Film</Link>
       <FilmsList />
     </section>
   );
