@@ -13,6 +13,7 @@ const ButtonStyled = styled.button`
   font-size: 19px;
 
   .new-film {
+    margin-top: 20px;
     background-color: #4c4441;
   }
 `;
