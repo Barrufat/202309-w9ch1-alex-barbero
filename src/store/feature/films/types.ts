@@ -1,5 +1,5 @@
 export interface FilmStructure {
-  id: number;
+  id?: number;
   isWatched: boolean;
   title: string;
   year: string;

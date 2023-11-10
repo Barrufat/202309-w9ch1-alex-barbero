@@ -9,7 +9,6 @@ interface FilmFormProps {
 
 const FilmForm = ({ submitAction }: FilmFormProps) => {
   const initialFilm: FilmStructure = {
-    id: 0,
     isWatched: false,
     title: "",
     year: "",
